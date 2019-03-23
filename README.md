@@ -38,13 +38,15 @@ Inside each environment config is the name of an image and tag to listen for, an
 
     {
       "production": {
-        "my-org/my-repo:latest": {
-          "service": "my-docker-service"
+        "my-org/my-repo": {
+          "tagRegex": "^release-([0-9.]+)$",
+          "service": "swarm_my-docker-service"
         }
       },
       "development": {
-        "my-org/my-repo:development": {
-          "service": "my-docker-service"
+        "my-org/my-repo": {
+          "tagRegex": "^development$",
+          "service": "swarm_my-docker-service"
         }
       }
     }
